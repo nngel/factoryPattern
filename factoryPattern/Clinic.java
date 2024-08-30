@@ -20,6 +20,7 @@ public class Clinic {
             Pet pet;
 
             if (choice != 3) {
+
                 switch (choice) {
                     case 1:
                         pet = new Dog();
@@ -34,6 +35,7 @@ public class Clinic {
                         petFile.setPetName("Muning");
                         petFile.setPet(pet);
                         ((Cat) pet).setNoOfLives(9);
+                        break;
                 }
 
                 System.out.println("Pet id is " + petFile.getPetId());
@@ -41,6 +43,15 @@ public class Clinic {
                 System.out.println("Pet kind: " + petFile.getPet().getClass().getSimpleName());
                 System.out.println("Communication sound: " + petFile.getPet().makeSound());
                 System.out.println("Play mode: " + petFile.getPet().play());
+
+                // Unique Functions Per Animal
+                if (petFile.getPet().getClass().getSimpleName().equals("Dog")) {
+                    System.out.println("Breed: " + ((Dog) petFile.getPet()).getBreed());
+                }
+                if (petFile.getPet().getClass().getSimpleName().equals("Cat")) {
+                    System.out.println("Number of Lives: " + ((Cat) petFile.getPet()).getNoOfLives());
+                }
+
                 System.out.println();
             } else {
                 System.out.println("Exit");
