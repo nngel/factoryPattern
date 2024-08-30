@@ -45,14 +45,13 @@ public class Clinic {
                 System.out.println("Play mode: " + petFile.getPet().play());
 
                 // Unique Functions Per Animal
-                if (petFile.getPet().getClass().getSimpleName().equals("Dog")) {
-                    System.out.println("Breed: " + ((Dog) petFile.getPet()).getBreed());
-                }
-                if (petFile.getPet().getClass().getSimpleName().equals("Cat")) {
-                    System.out.println("Number of Lives: " + ((Cat) petFile.getPet()).getNoOfLives());
+                // Using enhanced switch case
+                switch (petFile.getPet().getClass().getSimpleName()) {
+                    case "Dog" -> System.out.println("Breed: " + ((Dog) petFile.getPet()).getBreed());
+                    case "Cat" -> System.out.println("Number of Lives: " + ((Cat) petFile.getPet()).getNoOfLives());
                 }
 
-                System.out.println();
+                System.out.println("-----");
             } else {
                 System.out.println("Exit");
             }
